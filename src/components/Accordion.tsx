@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Accordion() {
   return (
     <div className="bg-gray-100 min-h-screen p-4 md:p-12">
@@ -10,7 +12,7 @@ export default function Accordion() {
               htmlFor="accordion1"
               className="flex items-center justify-between p-4 bg-slate-800 transition-colors"
             >
-              <span className="text-lg font-semibold">Professional Profile</span>
+              <span className="text-lg font-semibold">Como funciona o serviço?</span>
               <svg
                 className="w-6 h-6 transition-transform peer-checked:rotate-180"
                 fill="none"
@@ -28,7 +30,7 @@ export default function Accordion() {
             <div className="max-h-0 overflow-hidden transition-all duration-300 peer-checked:max-h-screen">
               <div className="p-4">
                 <p className="text-gray-700 leading-relaxed">
-                  Full-stack developer with expertise in modern web technologies and a passion for creating innovative solutions.
+                  Oferecemos serviço completo de bar para eventos, incluindo bartenders profissionais, drinks personalizados e toda estrutura necessária.
                 </p>
               </div>
             </div>
@@ -40,7 +42,7 @@ export default function Accordion() {
               htmlFor="accordion2"
               className="flex items-center justify-between p-4 bg-slate-800 transition-colors"
             >
-              <span className="text-lg font-semibold">MyKare Experience</span>
+              <span className="text-lg font-semibold">Qual o tempo de duração?</span>
               <svg
                 className="w-6 h-6 transition-transform peer-checked:rotate-180"
                 fill="none"
@@ -58,7 +60,7 @@ export default function Accordion() {
             <div className="max-h-0 overflow-hidden transition-all duration-300 peer-checked:max-h-screen">
               <div className="p-4">
                 <p className="text-gray-700 leading-relaxed">
-                  Contributing to healthcare innovation through advanced web development and system architecture.
+                  O serviço padrão é de 4 horas, podendo ser estendido conforme necessidade do cliente.
                 </p>
               </div>
             </div>
@@ -70,7 +72,7 @@ export default function Accordion() {
               htmlFor="accordion3"
               className="flex items-center justify-between p-4 bg-slate-800 transition-colors"
             >
-              <span className="text-lg font-semibold">Project Showcase</span>
+              <span className="text-lg font-semibold">Quantos drinks são servidos?</span>
               <svg
                 className="w-6 h-6 transition-transform peer-checked:rotate-180"
                 fill="none"
@@ -88,7 +90,7 @@ export default function Accordion() {
             <div className="max-h-0 overflow-hidden transition-all duration-300 peer-checked:max-h-screen">
               <div className="p-4">
                 <p className="text-gray-700 leading-relaxed">
-                  Building cutting-edge applications using Next.js, React, and modern web technologies.
+                  A quantidade varia conforme o pacote escolhido, mas geralmente calculamos 3-4 drinks por pessoa.
                 </p>
               </div>
             </div>
@@ -100,7 +102,7 @@ export default function Accordion() {
               htmlFor="accordion4"
               className="flex items-center justify-between p-4 bg-slate-800 transition-colors"
             >
-              <span className="text-lg font-semibold">Technical Skills</span>
+              <span className="text-lg font-semibold">Quais drinks são oferecidos?</span>
               <svg
                 className="w-6 h-6 transition-transform peer-checked:rotate-180"
                 fill="none"
@@ -118,7 +120,7 @@ export default function Accordion() {
             <div className="max-h-0 overflow-hidden transition-all duration-300 peer-checked:max-h-screen">
               <div className="p-4">
                 <p className="text-gray-700 leading-relaxed">
-                  Expertise in full-stack development, cloud technologies, and modern frameworks.
+                  Temos uma carta variada com drinks clássicos e autorais, incluindo opções com e sem álcool. <a href="/carta-de-drinks" className="text-blue-600 hover:text-blue-800 underline">Confira nossa carta completa aqui</a>
                 </p>
               </div>
             </div>
@@ -130,7 +132,7 @@ export default function Accordion() {
               htmlFor="accordion5"
               className="flex items-center justify-between p-4 bg-slate-800 transition-colors"
             >
-              <span className="text-lg font-semibold">Development Process</span>
+              <span className="text-lg font-semibold">Qual estrutura é necessária?</span>
               <svg
                 className="w-6 h-6 transition-transform peer-checked:rotate-180"
                 fill="none"
@@ -148,7 +150,7 @@ export default function Accordion() {
             <div className="max-h-0 overflow-hidden transition-all duration-300 peer-checked:max-h-screen">
               <div className="p-4">
                 <p className="text-gray-700 leading-relaxed">
-                  Following industry best practices and agile methodologies for efficient development.
+                  Apenas um ponto de energia e água. Todo o restante é fornecido por nós.
                 </p>
               </div>
             </div>
@@ -160,7 +162,7 @@ export default function Accordion() {
               htmlFor="accordion6"
               className="flex items-center justify-between p-4 bg-slate-800 transition-colors"
             >
-              <span className="text-lg font-semibold">Creative Vision</span>
+              <span className="text-lg font-semibold">Como fazer reserva?</span>
               <svg
                 className="w-6 h-6 transition-transform peer-checked:rotate-180"
                 fill="none"
@@ -178,7 +180,7 @@ export default function Accordion() {
             <div className="max-h-0 overflow-hidden transition-all duration-300 peer-checked:max-h-screen">
               <div className="p-4">
                 <p className="text-gray-700 leading-relaxed">
-                  Combining technical expertise with creative design to deliver outstanding user experiences.
+                  Entre em contato via WhatsApp ou email para verificar disponibilidade e fazer seu orçamento. <a href="/reserva" className="text-blue-600 hover:text-blue-800 underline">Faça sua reserva aqui</a>
                 </p>
               </div>
             </div>
@@ -188,16 +190,20 @@ export default function Accordion() {
         {/* Imagem (para Desktop) */}
         <div className="hidden md:block col-span-1 relative">
           {/* Imagem de fundo */}
-          <img
+          <Image
             src="/vercel.svg"
             alt="Imagem de fundo"
+            width={500} // Defina um tamanho adequado
+            height={500}
             className="w-[90%] animate-spin ml-20 h-auto object-cover rounded-lg sticky top-0 z-0"
           />
 
           {/* Segunda imagem sobreposta */}
-          <img
+          <Image
             src="/next.svg"
             alt="Imagem sobreposta"
+            width={400} // Ajuste conforme necessário
+            height={400}
             className="w-[80%] ml-16 h-auto object-cover rounded-lg absolute top-10 left-10 z-10"
           />
         </div>
