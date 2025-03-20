@@ -1,6 +1,5 @@
 'use client'
 import { useState, useRef, useEffect, FormEvent } from 'react';
-import { CohereClient } from 'cohere-ai';
 import { 
   BiDrink, 
   BiMapAlt, 
@@ -15,11 +14,6 @@ import {
 import { FaInstagram } from 'react-icons/fa';
 import { mainCities, getPartnersByCity } from '@/data/partners';
 import { PartnerCard } from './PartnerCard';
-
-// Inicialização do cliente Cohere
-const cohere = new CohereClient({
-  token: process.env.COHERE_API_KEY || '',
-});
 
 interface Message {
   content: string;
@@ -247,7 +241,7 @@ Para mais detalhes sobre cada drink, incluindo descrições e imagens, visite no
         label: "WhatsApp",
         value: "whatsapp",
         Icon: BiLogoWhatsapp,
-        action: () => window.open('https://wa.me/5511999999999?text=Ol%C3%A1%2C%20vim%20diretamente%20do%20site%20da%20Celebrer%2C%20gostaria%20de%20saber%20sobre%20sua%20agenda...', '_blank')
+        action: () => window.open('https://wa.me/5511999999999', '_blank')
       },
       {
         label: "Agenda",
@@ -413,6 +407,41 @@ const ChatAI = () => {
     };
     setMessages(prev => [...prev, userMessage]);
 
+    const flow = CHAT_FLOWS[option.value as keyof typeof CHAT_FLOWS];
+    if (flow) {
+      setIsTyping(true);
+      setTimeout(() => {
+        const aiMessage: Message = {
+          content: flow.response,
+          isUser: false,
+          options: flow.options || DEFAULT_OPTIONS,
+          component: flow.component
+        };
+        setMessages(prev => [...prev, aiMessage]);
+
+        if (flow.images) {
+          flow.images.forEach(image => {
+            setMessages(prev => [
+              ...prev,
+              {
+                content: '',
+                isUser: false,
+                image: image
+              }
+            ]);
+          });
+        }
+
+        setIsTyping(false);
+      }, 1000);
+    } else {
+      const aiMessage: Message = {
+        content: "Desculpe, não entendi sua escolha. Como posso ajudar? 😕",
+        isUser: false,
+        options: DEFAULT_OPTIONS
+      };
+      setMessages(prev => [...prev, aiMessage]);
+    }
   };
 
   const isAtendimentoRequest = (text: string): boolean => {
@@ -420,11 +449,50 @@ const ChatAI = () => {
     return keywords.some(keyword => text.toLowerCase().includes(keyword));
   };
 
-  
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    if (!inputMessage.trim() || isLoading) return;
+
+    const userMessage: Message = {
+      content: inputMessage,
+      isUser: true
+    };
+    setMessages(prev => [...prev, userMessage]);
+    setInputMessage('');
+    setIsLoading(true);
+
+    try {
+      if (isAtendimentoRequest(inputMessage)) {
+        const aiMessage: Message = {
+          content: "Como você prefere ser atendido? 👋",
+          isUser: false,
+          options: ATENDIMENTO_OPTIONS
+        };
+        setMessages(prev => [...prev, aiMessage]);
+      } else {
+        const aiMessage: Message = {
+          content: "Desculpe, não entendi sua escolha. Como posso ajudar? 😕",
+          isUser: false,
+          options: DEFAULT_OPTIONS
+        };
+        setMessages(prev => [...prev, aiMessage]);
+      }
+    } catch (error) {
+      console.error('Erro:', error);
+      setMessages(prev => [...prev, {
+        content: "Desculpe, ocorreu um erro. Tente novamente mais tarde. 😕",
+        isUser: false,
+        options: DEFAULT_OPTIONS
+      }]);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   const resetChat = () => {
     const greeting = getGreeting();
     const welcomeMessage = `Olá, ${greeting}! Sou a Celly, a assistente virtual da Celebrer. Como sou uma assistente virtual, vou guiar você no atendimento.`;
+    
     setMessages([
       {
         content: welcomeMessage,
