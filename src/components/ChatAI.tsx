@@ -30,16 +30,6 @@ interface QuickOption {
   action?: () => void;
 }
 
-const systemPrompt = `Você é um assistente virtual da Celebrer especializado em eventos.
-Siga estas regras RIGOROSAMENTE:
-1. Responda SEMPRE em português brasileiro formal
-2. Use emojis relevantes em suas respostas
-3. Mantenha respostas curtas e objetivas
-4. NÃO inclua opções na sua resposta, apenas responda a pergunta
-
-Exemplo de resposta correta:
-"Olá! Seja bem-vindo à Celebrer! 🎉 Como posso ajudar você hoje?"`;
-
 const DEFAULT_OPTIONS: QuickOption[] = [
   { 
     label: "Carta de Drinks",
@@ -376,7 +366,7 @@ const ChatAI = () => {
             let optionIndex = 0;
             const optionsTypingInterval = setInterval(() => {
               if (optionIndex < DEFAULT_OPTIONS.length) {
-                setMessages(prev => [
+                setMessages([
                   {
                     content: welcomeMessage,
                     isUser: false,
