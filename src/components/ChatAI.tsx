@@ -8,7 +8,6 @@ import {
   BiCalendarEvent, 
   BiX,
   BiMessageDetail,
-  BiBot,
   BiPhone,
   BiLogoWhatsapp,
   BiRefresh
@@ -414,41 +413,6 @@ const ChatAI = () => {
     };
     setMessages(prev => [...prev, userMessage]);
 
-    const flow = CHAT_FLOWS[option.value as keyof typeof CHAT_FLOWS];
-    if (flow) {
-      setIsTyping(true);
-      setTimeout(() => {
-        const aiMessage: Message = {
-          content: flow.response,
-          isUser: false,
-          options: flow.options || DEFAULT_OPTIONS,
-          component: flow.component
-        };
-        setMessages(prev => [...prev, aiMessage]);
-
-        if (flow.images) {
-          flow.images.forEach(image => {
-            setMessages(prev => [
-              ...prev,
-              {
-                content: '',
-                isUser: false,
-                image: image
-              }
-            ]);
-          });
-        }
-
-        setIsTyping(false);
-      }, 1000);
-    } else {
-      const aiMessage: Message = {
-        content: "Desculpe, não entendi sua escolha. Como posso ajudar? 😕",
-        isUser: false,
-        options: DEFAULT_OPTIONS
-      };
-      setMessages(prev => [...prev, aiMessage]);
-    }
   };
 
   const isAtendimentoRequest = (text: string): boolean => {
@@ -456,58 +420,11 @@ const ChatAI = () => {
     return keywords.some(keyword => text.toLowerCase().includes(keyword));
   };
 
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
-    if (!inputMessage.trim() || isLoading) return;
-
-    const userMessage: Message = {
-      content: inputMessage,
-      isUser: true
-    };
-    setMessages(prev => [...prev, userMessage]);
-    setInputMessage('');
-    setIsLoading(true);
-
-    try {
-      if (isAtendimentoRequest(inputMessage)) {
-        const aiMessage: Message = {
-          content: "Como você prefere ser atendido? 👋",
-          isUser: false,
-          options: ATENDIMENTO_OPTIONS
-        };
-        setMessages(prev => [...prev, aiMessage]);
-      } else {
-        const response = await cohere.chat({
-          message: inputMessage,
-          model: 'command',
-          preamble: systemPrompt,
-          temperature: 0.3,
-          maxTokens: 200,
-        });
-
-        const aiMessage: Message = {
-          content: response.text,
-          isUser: false,
-          options: DEFAULT_OPTIONS
-        };
-        setMessages(prev => [...prev, aiMessage]);
-      }
-    } catch (error) {
-      console.error('Erro:', error);
-      setMessages(prev => [...prev, {
-        content: "Desculpe, ocorreu um erro. Tente novamente mais tarde. 😕",
-        isUser: false,
-        options: DEFAULT_OPTIONS
-      }]);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  
 
   const resetChat = () => {
     const greeting = getGreeting();
     const welcomeMessage = `Olá, ${greeting}! Sou a Celly, a assistente virtual da Celebrer. Como sou uma assistente virtual, vou guiar você no atendimento.`;
-    
     setMessages([
       {
         content: welcomeMessage,
