@@ -6,7 +6,7 @@ import { Separador } from "@/components/interface/Separador";
 import Accordion from "@/components/Accordion";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-
+import ChatAI from "@/components/ChatAI";
 
 export default function Home() {
   return (
@@ -20,6 +20,7 @@ export default function Home() {
       <Accordion />
       <Separador />
       <Contact />
+      <ChatAI />
       <Footer />
 
     </div>

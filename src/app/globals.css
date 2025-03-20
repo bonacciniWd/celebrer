@@ -14,12 +14,34 @@
   }
 }
 
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-1px); }
+  20%, 40%, 60%, 80% { transform: translateX(1px); }
+}
+
+@keyframes shakeWithPause {
+  0%, 20%, 40%, 60%, 80%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-1px); }
+  15%, 35%, 55%, 75%, 95% { transform: translateX(1px); }
+}
+
+/* Esconder scrollbar para Chrome, Safari e Opera */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Esconder scrollbar para IE, Edge e Firefox */
+* {
+  -ms-overflow-style: none;  /* IE e Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: 'Poppins', sans-serif; /* Definindo Poppins como fonte padrão */
 }
-
 
 /* Para elementos que usam a fonte Montserrat */
 h1, h2, h3, .montserrat {
@@ -30,7 +52,6 @@ html {
   scroll-behavior: smooth;
 }
 
-
 @keyframes spin {
   to {
       transform: rotate(360deg);
@@ -38,4 +59,18 @@ html {
 }
 .animate-spin {
   animation: spin 18s linear infinite;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.3s ease-out;
 }

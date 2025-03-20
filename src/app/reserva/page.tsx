@@ -5,7 +5,7 @@ import { FaWhatsapp } from "react-icons/fa"
 import { useState } from "react"
 
 export default function Reserva() {
-  const [selectedDate, setSelectedDate] = useState(new Date())
+  const [selectedDate] = useState(new Date())
   
   // Formata a data para o formato YYYY-MM-DD para usar no link do Google Calendar
   const formattedDate = selectedDate.toISOString().split('T')[0]
