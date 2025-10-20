@@ -12,11 +12,11 @@ const Contact = () => {
             <div className="flex items-start space-x-4 hover:transform hover:scale-105 transition-all p-6 bg-white rounded-lg shadow-sm">
               <FiMapPin className="text-gray-700 text-2xl flex-shrink-0 mt-1" />
               <div>
-                <h3 className="text-xl font-semibold text-gray-700 mb-2">Nosso Endereço</h3>
-                <p className="text-gray-600 text-lg">
-                  Rua Exemplo, 123<br />
-                  Vale do Itajaí, SC - Brasil<br />
-                  CEP: 89000-000
+                <h3 className="text-lg md:text-xl font-semibold text-gray-700 mb-2">Nosso Endereço</h3>
+                <p className="text-gray-600 text-base md:text-lg">
+                  Rua 1926<br />
+                  Balneário Camboriú, SC - Brasil<br />
+                  CEP: 88330-478
                 </p>
               </div>
             </div>
@@ -26,7 +26,7 @@ const Contact = () => {
               <FiPhone className="text-gray-700 text-2xl flex-shrink-0 mt-1" />
               <div>
                 <h3 className="text-xl font-semibold text-gray-700 mb-2">Telefone</h3>
-                <p className="text-gray-600 text-lg">+55 (47) 99999-9999</p>
+                <p className="text-gray-600 text-lg">+55 (47) 99952-5722</p>
               </div>
             </div>
 
@@ -35,7 +35,7 @@ const Contact = () => {
               <FiMail className="text-gray-700 text-2xl flex-shrink-0 mt-1" />
               <div>
                 <h3 className="text-xl font-semibold text-gray-700 mb-2">Email</h3>
-                <p className="text-gray-600 text-lg">contato@empresa.com</p>
+                <p className="text-gray-600 text-lg">atendimentodeaeb@gmail.com</p>
               </div>
             </div>
           </div>

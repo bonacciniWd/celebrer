@@ -45,15 +45,15 @@ const Hero = () => {
 
       <div className="absolute inset-0 bg-black opacity-65 z-0"></div>
 
-      {/* Conteúdo centralizado */}
-      <div className="relative z-10 text-center px-2 space-y-6">
+  {/* Conteúdo centralizado (limitado em desktops) */}
+  <div className="relative z-10 text-center px-4 md:px-6 space-y-6 max-w-6xl mx-auto">
 
         {/* Subtítulo animado */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.1 }}
-          className=" text-lg font-montserrat sm:text-lg md:text-3xl -mt-24 mb-16 lg:text-2xl xl:text-3xl max-w-4xl drop-shadow-md px-4"
+          className="text-base font-montserrat sm:text-lg md:text-xl -mt-24 mb-16 lg:text-xl xl:text-2xl max-w-4xl drop-shadow-md mx-auto"
         >
           Oferecemos soluções completas para seus momentos mais especiais.
         </motion.p>
@@ -64,7 +64,7 @@ const Hero = () => {
           animate={{ scale: 1, opacity: 1 }}
           whileHover={{ scale: 1.1 }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
-          className="mt-10 flex items-center justify-center md:max-w-[600px] max-w-[200px] gap-2 mx-auto px-0 py-0 sm:px-8 sm:py-4 md:px-10 md:py-3 lg:px-12 lg:py-5 transition-all text-white font-semibold rounded-lg text-xs sm:text-sm md:text-lg lg:text-xl"
+          className="mt-10 flex items-center justify-center md:max-w-[600px] max-w-[220px] gap-2 mx-auto px-0 py-0 sm:px-8 sm:py-4 md:px-10 md:py-3 lg:px-12 lg:py-5 transition-all text-white font-semibold rounded-lg text-xs sm:text-sm md:text-base lg:text-lg"
         >
           <MagicButton
             title="Saiba mais"

@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    domains: ['res.cloudinary.com'], // Adicionando Cloudinary como domínio permitido
+      domains: ['res.cloudinary.com', 'images.ctfassets.net'], // Adicionando Cloudinary como domínio permitido
   },
 };
 

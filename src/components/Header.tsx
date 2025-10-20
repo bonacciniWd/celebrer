@@ -11,13 +11,14 @@ export const Header = () => {
   // Definindo os itens do menu com seus respectivos caminhos
   const menuItems = [
     { name: "Carta de Drinks", path: "/carta-de-drinks" },
-    { name: "Sobre", path: "/quem-somos" },
-    { name: "Contato", path: "/contato" }
+    { name: "Contato", path: "/contato" },
+    { name: "Fornecedores", path: "/fornecedores" },
+    { name: "Seja Parceiro", path: "/parceiros" }
   ];
 
   return (
     <header className="fixed top-0 left-0 right-0 bg-gray-900/90 shadow-md z-50">
-      <nav className="max-w-4xl xl:max-w-5xl mx-auto px-4 py-2.5 lg:py-4">
+      <nav className="mx-auto w-full max-w-screen-xl px-4 sm:px-6 py-2.5 lg:py-4">
         <div className="flex items-center justify-between">
           {/* Logo com link para a Inicio */}
           <Link href="/">
@@ -25,8 +26,8 @@ export const Header = () => {
               src="/logo.png"
               alt="Logo"
               width={180}
-              height={100}
-              className="w-[150px] h-auto lg:w-[260px]" // Ajustado para um tamanho intermediário
+              height={90}
+              className="w-[150px] h-auto lg:w-[220px]" // Ajustado para um tamanho intermediário
             />
           </Link>
 

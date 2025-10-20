@@ -11,7 +11,7 @@ export default function Reserva() {
   const formattedDate = selectedDate.toISOString().split('T')[0]
   
   return (
-    <div className="min-h-screen bg-white">
+  <div className="min-h-screen bg-gray-100">
       <Header />
       
       <div className="relative pt-20">
@@ -32,7 +32,7 @@ export default function Reserva() {
             </p>
           </div>
 
-          <div className="bg-white shadow-xl rounded-xl p-8 mb-16">
+          <div className="bg-gray-100 shadow-xl rounded-xl p-8 mb-16">
             <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">
               Horários Disponíveis
             </h2>

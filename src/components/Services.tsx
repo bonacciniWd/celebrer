@@ -3,8 +3,8 @@ import Image from 'next/image';
 
 const Services = () => {
   return (
-    <div className="bg-gray-100">
-      <div className="container mx-auto px-4 pb-14 md:pb-20"> {/* Adicionando padding vertical */}
+    <div className="bg-gray-100 rounded-2xl">
+      <div className="mx-auto px-4 pb-14 md:pb-20"> {/* Adicionando padding vertical */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 ">
 
           <div className="md:col-span-2 md:row-span-2 relative overflow-hidden rounded-2xl shadow-lg group">

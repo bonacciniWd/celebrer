@@ -6,11 +6,11 @@ export default function Accordion() {
       <div className="max-w-7xl mt-20 md:mt-28 h-auto mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Accordion */}
         <div className="space-y-4 col-span-1 md:col-span-1">
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+          <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
             <input type="checkbox" id="accordion1" className="peer hidden" />
             <label
               htmlFor="accordion1"
-              className="flex items-center justify-between p-4 bg-slate-800 transition-colors"
+              className="flex items-center justify-between p-4 bg-slate-800 text-white transition-colors"
             >
               <span className="text-lg font-semibold">Como funciona o serviço?</span>
               <svg
@@ -29,18 +29,18 @@ export default function Accordion() {
             </label>
             <div className="max-h-0 overflow-hidden transition-all duration-300 peer-checked:max-h-screen">
               <div className="p-4">
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-gray-200 leading-relaxed">
                   Oferecemos serviço completo de bar para eventos, incluindo bartenders profissionais, drinks personalizados e toda estrutura necessária.
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+          <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
             <input type="checkbox" id="accordion2" className="peer hidden" />
             <label
               htmlFor="accordion2"
-              className="flex items-center justify-between p-4 bg-slate-800 transition-colors"
+              className="flex items-center justify-between p-4 bg-slate-800 text-white transition-colors"
             >
               <span className="text-lg font-semibold">Qual o tempo de duração?</span>
               <svg
@@ -59,18 +59,18 @@ export default function Accordion() {
             </label>
             <div className="max-h-0 overflow-hidden transition-all duration-300 peer-checked:max-h-screen">
               <div className="p-4">
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-gray-200 leading-relaxed">
                   O serviço padrão é de 4 horas, podendo ser estendido conforme necessidade do cliente.
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+          <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
             <input type="checkbox" id="accordion3" className="peer hidden" />
             <label
               htmlFor="accordion3"
-              className="flex items-center justify-between p-4 bg-slate-800 transition-colors"
+              className="flex items-center justify-between p-4 bg-slate-800 text-white transition-colors"
             >
               <span className="text-lg font-semibold">Quantos drinks são servidos?</span>
               <svg
@@ -89,18 +89,18 @@ export default function Accordion() {
             </label>
             <div className="max-h-0 overflow-hidden transition-all duration-300 peer-checked:max-h-screen">
               <div className="p-4">
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-gray-200 leading-relaxed">
                   A quantidade varia conforme o pacote escolhido, mas geralmente calculamos 3-4 drinks por pessoa.
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+          <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
             <input type="checkbox" id="accordion4" className="peer hidden" />
             <label
               htmlFor="accordion4"
-              className="flex items-center justify-between p-4 bg-slate-800 transition-colors"
+              className="flex items-center justify-between p-4 bg-slate-800 text-white transition-colors"
             >
               <span className="text-lg font-semibold">Quais drinks são oferecidos?</span>
               <svg
@@ -119,18 +119,18 @@ export default function Accordion() {
             </label>
             <div className="max-h-0 overflow-hidden transition-all duration-300 peer-checked:max-h-screen">
               <div className="p-4">
-                <p className="text-gray-700 leading-relaxed">
-                  Temos uma carta variada com drinks clássicos e autorais, incluindo opções com e sem álcool. <a href="/carta-de-drinks" className="text-blue-600 hover:text-blue-800 underline">Confira nossa carta completa aqui</a>
+                <p className="text-gray-200 leading-relaxed">
+                  Temos uma carta variada com drinks clássicos e autorais, incluindo opções com e sem álcool. <a href="/carta-de-drinks" className="text-rose-400 hover:text-rose-300 underline">Confira nossa carta completa aqui</a>
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+          <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
             <input type="checkbox" id="accordion5" className="peer hidden" />
             <label
               htmlFor="accordion5"
-              className="flex items-center justify-between p-4 bg-slate-800 transition-colors"
+              className="flex items-center justify-between p-4 bg-slate-800 text-white transition-colors"
             >
               <span className="text-lg font-semibold">Qual estrutura é necessária?</span>
               <svg
@@ -149,18 +149,18 @@ export default function Accordion() {
             </label>
             <div className="max-h-0 overflow-hidden transition-all duration-300 peer-checked:max-h-screen">
               <div className="p-4">
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-gray-200 leading-relaxed">
                   Apenas um ponto de energia e água. Todo o restante é fornecido por nós.
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+          <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
             <input type="checkbox" id="accordion6" className="peer hidden" />
             <label
               htmlFor="accordion6"
-              className="flex items-center justify-between p-4 bg-slate-800 transition-colors"
+              className="flex items-center justify-between p-4 bg-slate-800 text-white transition-colors"
             >
               <span className="text-lg font-semibold">Como fazer reserva?</span>
               <svg
@@ -179,8 +179,8 @@ export default function Accordion() {
             </label>
             <div className="max-h-0 overflow-hidden transition-all duration-300 peer-checked:max-h-screen">
               <div className="p-4">
-                <p className="text-gray-700 leading-relaxed">
-                  Entre em contato via WhatsApp ou email para verificar disponibilidade e fazer seu orçamento. <a href="/reserva" className="text-blue-600 hover:text-blue-800 underline">Faça sua reserva aqui</a>
+                <p className="text-gray-200 leading-relaxed">
+                  Entre em contato via WhatsApp ou email para verificar disponibilidade e fazer seu orçamento. <a href="/reserva" className="text-rose-400 hover:text-rose-300 underline">Faça sua reserva aqui</a>
                 </p>
               </div>
             </div>
